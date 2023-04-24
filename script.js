@@ -1,7 +1,7 @@
 "use strict"
 
 const imageCount = 30;
-let currentImage = 1;
+let currentImage = 29;
 
 const result = {sympathie: [], kompetenz: [], authorität: [],}
 
@@ -47,6 +47,18 @@ function write(nextImage){
         if(currentImage == imageCount-1 && nextImage){
             
             saveData(result, "danke.json");
+            let danke = document.createElement("a");
+            document.body.appendChild(danke);
+            danke.style = "display: none"
+            document.getElementById("div-keks").classList.remove("d-none");
+            document.getElementById("keks").classList.add("box");
+            setTimeout(() => { 
+                document.getElementById("keks").classList.remove("box");
+                document.getElementById("keks").classList.add("wobble"); 
+            }, 2000);
+            
+            danke.href = "#keks";
+            danke.click();
         }
         console.log("zurück")
         if(nextImage){
@@ -94,6 +106,8 @@ let saveData = (function () {
     let a = document.createElement("a");
     document.body.appendChild(a);
     a.style = "display: none";
+
+
     return function (data, fileName) {
         let json = JSON.stringify(data);
         let blob = new Blob([json], {type: "application/json"});
@@ -102,6 +116,7 @@ let saveData = (function () {
         a.download = fileName;
         a.click();
         window.URL.revokeObjectURL(url);
+
     };
 }());
 
