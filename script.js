@@ -11,6 +11,7 @@ weiter.addEventListener("click", function() {write(true);});
 zurück.addEventListener("click", function() {write(false);});
 
 function write(nextImage){
+    //check for valid input
     let regexCheck = /^([1-9]|10)$/.test(input[0].value) && /^([1-9]|10)$/.test(input[1].value) && /^([1-9]|10)$/.test(input[2].value);
     console.log(regexCheck);
     if(!/^([1-9]|10)$/.test(input[0].value)){
@@ -26,6 +27,7 @@ function write(nextImage){
         input.forEach((e) => {e.style.borderColor = "black"});
     }
 
+    //save current input
     if(nextImage){
         result.sympathie[currentImage-1] = input[0].value;
         result.kompetenz[currentImage-1] = input[1].value;
@@ -38,6 +40,7 @@ function write(nextImage){
         }
     }
 
+    //next or previous image
     if(!(nextImage == false && currentImage == 1)){ 
         if(currentImage == imageCount-1 && nextImage){
             
@@ -49,6 +52,7 @@ function write(nextImage){
         } else {
             --currentImage;
         }
+        
         input.forEach((e, i) => {
             switch(i) {
                 case 0:
