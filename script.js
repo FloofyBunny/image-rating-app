@@ -1,7 +1,7 @@
 "use strict"
 
 const imageCount = 30;
-let currentImage = 1;
+let currentImage = 29;
 
 const result = {sympathie: [], kompetenz: [], authorität: [],}
 
@@ -62,7 +62,9 @@ function write(nextImage){
         }
         console.log("zurück")
         if(nextImage){
-            ++currentImage;
+            if(currentImage < 30){
+                ++currentImage;
+            }
         } else {
             --currentImage;
         }
