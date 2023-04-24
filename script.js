@@ -1,5 +1,7 @@
+"use strict"
+
 const imageCount = 30;
-let currentImage = 28;
+let currentImage = 1;
 
 const result = {sympathie: [], kompetenz: [], authorität: [],}
 
@@ -44,7 +46,7 @@ function write(nextImage){
     if(!(nextImage == false && currentImage == 1)){ 
         if(currentImage == imageCount-1 && nextImage){
             
-            saveData(result, "danke.json")
+            saveData(result, "danke.json");
         }
         console.log("zurück")
         if(nextImage){
@@ -52,6 +54,10 @@ function write(nextImage){
         } else {
             --currentImage;
         }
+        //swap image
+        let preview = document.getElementById("preview");
+        preview.src = "rate/(" + currentImage + ").jpg";
+
         
         input.forEach((e, i) => {
             switch(i) {
