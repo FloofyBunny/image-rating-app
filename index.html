@@ -62,7 +62,7 @@
             margin-top: 10px;
         }
 
-        input[type="submit"] {
+        input[type="submit"], input[type="button"] {
             background-color: transparent;
             width: 50%;
             border-radius: 10px;
@@ -75,15 +75,6 @@
 
         }
     </style>
-    <script>
-        const imageCount = 30;
-
-        const output = new Blob([JSON.stringify(result, null, 4)], {
-            type: "application/json",
-        });
-        
-
-    </script>
 </head>
 <body>
     
@@ -109,11 +100,13 @@
                 </div>
             </div> 
             <div id="buttons">
-                <input id="prev" type="submit" value="zurück"></input> 
-                <input id="submit" type="submit" value="weiter"></input>  
+                <input id="zurück" type="button" value="zurück"></input> 
+                <input id="weiter" type="button" value="weiter"></input>  
             </div>
             
         </form> 
     </div>
+    <script src="script.js">
+    </script>
 </body>
 </html>
