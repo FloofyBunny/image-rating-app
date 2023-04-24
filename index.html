@@ -56,9 +56,15 @@
             box-shadow: #101011 0 0 10px 4px;
         }
 
+        #buttons {
+            background: transparent;
+            box-shadow: none;
+            margin-top: 10px;
+        }
+
         input[type="submit"] {
             background-color: transparent;
-            width: 100%;
+            width: 50%;
             border-radius: 10px;
             padding: 10px;
             background: linear-gradient(270deg, 	#ff0000 0%,#ff9292 100%);
@@ -66,12 +72,15 @@
             font-size: xx-large;
             font-family: 'Courier New', Courier, monospace;
             font-weight: bolder;
-            margin-top: 10px;
+
         }
     </style>
     <script>
         const imageCount = 30;
 
+        const output = new Blob([JSON.stringify(result, null, 4)], {
+            type: "application/json",
+        });
         
 
     </script>
@@ -99,7 +108,11 @@
                     <input id="authorität"type="number" min="1" max="10" required></input>
                 </div>
             </div> 
-            <input id="submit" type="submit" min="1" max="10" value="next"></input> 
+            <div id="buttons">
+                <input id="prev" type="submit" value="zurück"></input> 
+                <input id="submit" type="submit" value="weiter"></input>  
+            </div>
+            
         </form> 
     </div>
 </body>
