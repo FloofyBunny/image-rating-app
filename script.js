@@ -1,5 +1,5 @@
 const imageCount = 30;
-let currentImage = 1;
+let currentImage = 28;
 
 const result = {sympathie: [], kompetenz: [], authorität: [],}
 
@@ -11,8 +11,19 @@ weiter.addEventListener("click", function() {write(true);});
 zurück.addEventListener("click", function() {write(false);});
 
 function write(nextImage){
-    if((input[0].value == "" || input[1].value == "" || input[2].value == "") && nextImage) {
+    let regexCheck = /^([1-9]|10)$/.test(input[0].value) && /^([1-9]|10)$/.test(input[1].value) && /^([1-9]|10)$/.test(input[2].value);
+    console.log(regexCheck);
+    if(!/^([1-9]|10)$/.test(input[0].value)){
+        input[0].style.borderColor = "red";
         return;
+    } else if (!/^([1-9]|10)$/.test(input[1].value) && nextImage){
+        input[1].style.borderColor = "red";
+        return;
+    } else if (!/^([1-9]|10)$/.test(input[2].value) && nextImage){
+        input[2].style.borderColor = "red";
+        return;
+    } else {
+        input.forEach((e) => {e.style.borderColor = "black"});
     }
 
     if(nextImage){
@@ -26,7 +37,12 @@ function write(nextImage){
             result.authorität[currentImage-1] = input[2].value;
         }
     }
+
     if(!(nextImage == false && currentImage == 1)){ 
+        if(currentImage == imageCount-1 && nextImage){
+            
+            saveData(result, "danke.json")
+        }
         console.log("zurück")
         if(nextImage){
             ++currentImage;
@@ -64,7 +80,20 @@ function write(nextImage){
 
 }
 
-const output = new Blob([JSON.stringify(result, null, 4)], {
-    type: "application/json",
-});
+let saveData = (function () {
+    let a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+    return function (data, fileName) {
+        let json = JSON.stringify(data);
+        let blob = new Blob([json], {type: "application/json"});
+        let url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = fileName;
+        a.click();
+        window.URL.revokeObjectURL(url);
+    };
+}());
+
+
 
