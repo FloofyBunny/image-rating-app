@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilder Bewerten</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            background-color: #0A4D68;
+        }
+
+        h1 {
+            background: linear-gradient(270deg, #088395 0%, #05BFDB 100%);
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: #101011 0 0 10px 4px;
+        }
+
+        #parent {
+            display: flex;
+            width: 100%;
+            max-width: 500px;
+            align-items: center;
+            flex-direction: column;
+            margin:auto;
+        }
+
+        .kategorie {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 50%;
+            padding: 10px
+        }
+
+        form {
+            width: 100%;
+        }
+
+        form>div {
+            background: linear-gradient(90deg, #00FFCA 0%, #05BFDB 100%);
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: #101011 0 0 10px 4px;
+        }
+
+        input[type="submit"] {
+            background-color: transparent;
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            background: linear-gradient(270deg, 	#ff0000 0%,#ff9292 100%);
+            color: white;
+            font-size: xx-large;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        const imageCount = 30;
+
+        
+
+    </script>
+</head>
+<body>
+    
+    <div id="parent">
+        <h1>Bewerte Bild NR: </h1>
+        <form>
+            <div>
+                <div class="kategorie">
+                    <h2>Sympathie</h2>
+                    <input id="sympathie"type="number" min="1" max="10" required></input>
+                </div>
+            </div>
+            <div>
+                <div class="kategorie">
+                    <h2>Kompetenz</h2>
+                    <input id="kompetenz"type="number" min="1" max="10" required></input>
+                </div>
+            </div>
+            <div>
+                <div class="kategorie">
+                    <h2>Authorität</h2>
+                    <input id="authorität"type="number" min="1" max="10" required></input>
+                </div>
+            </div> 
+            <input id="submit" type="submit" min="1" max="10" value="next"></input> 
+        </form> 
+    </div>
+</body>
+</html>
