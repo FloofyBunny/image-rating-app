@@ -1,7 +1,7 @@
 "use strict"
 
 const imageCount = 30;
-let currentImage = 29;
+let currentImage = 1;
 
 const result = {sympathie: [], kompetenz: [], authorität: [],}
 
