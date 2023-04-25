@@ -15,7 +15,7 @@
         }
         
         .shadow {
-            box-shadow: #111133 0px 0px 5px 0px;
+            box-shadow: #111133 0px 0px 6px 0px;
         }
 
         .navbar-brand {
@@ -220,6 +220,10 @@
             transform: rotate(0deg);
         }
     }
+
+    #counter {
+        margin: 20px;
+    }
     </style>
 </head>
 <body>
@@ -232,12 +236,16 @@
     </header>
     <div class="container">
         <img id="preview" class="img-fluid mx-auto d-block rounded" src="rate/(1).jpg">
+        <p id="counter" class="text-center">Bild 1 von 30</p>
     </div>
     <div class="container-fluid shadow bg-light">
+
         <h1 class="h1 pt-5 text-center">Bewerte Bilder in den Kategorien von 1 bis 10 </h1>
         <div id="anmerkung" class="container text-center text-muted">
             <p class="mb-0">1 ist schlechter als 10</p>
+
         </div>
+    
         <div id="input" class="container d-flex flex-column align-items-center ">
             <div class="kategorie d-flex justify-content-between w-50 pt-5 form-outline"">
                 <h2>Sympathie</h2>

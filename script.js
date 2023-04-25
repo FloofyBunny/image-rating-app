@@ -3,6 +3,9 @@
 const imageCount = 30;
 let currentImage = 1;
 
+let counter = document.getElementById("counter");
+counter.innerHTML = "Bild " + currentImage + " von " + imageCount;
+
 const result = {sympathie: [], kompetenz: [], authorität: [],}
 
 const input = document.querySelectorAll(".kategorie input");
@@ -72,6 +75,7 @@ function write(nextImage){
         let preview = document.getElementById("preview");
         preview.src = "rate/(" + currentImage + ").jpg";
 
+        counter.innerHTML = "Bild " + currentImage + " von " + imageCount;
         
         input.forEach((e, i) => {
             switch(i) {
