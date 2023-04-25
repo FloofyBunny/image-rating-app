@@ -47,6 +47,12 @@
             max-height: 500px;
         }
 
+        @media only screen and (max-width: 500px){
+            .w-50 {
+                width: 75% !important;
+            }
+        }
+
         #keks {
             margin-top: 400px;
         }
@@ -232,7 +238,7 @@
         <div id="anmerkung" class="container text-center text-muted">
             <p class="mb-0">1 ist schlechter als 10</p>
         </div>
-        <div class="container d-flex flex-column align-items-center ">
+        <div id="input" class="container d-flex flex-column align-items-center ">
             <div class="kategorie d-flex justify-content-between w-50 pt-5 form-outline"">
                 <h2>Sympathie</h2>
                 <input class="form-control" id="sympathie" type="number" min="1" max="10" required></input>
