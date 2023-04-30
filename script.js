@@ -19,7 +19,7 @@ function write(nextImage){
     //check for valid input
     let regexCheck = /^([1-9]|10)$/.test(input[0].value) && /^([1-9]|10)$/.test(input[1].value) && /^([1-9]|10)$/.test(input[2].value);
     console.log(regexCheck);
-    if(!/^([1-9]|10)$/.test(input[0].value)){
+    if(!/^([1-9]|10)$/.test(input[0].value) && nextImage){
         input[0].style.borderColor = "red";
         return;
     } else if (!/^([1-9]|10)$/.test(input[1].value) && nextImage){
