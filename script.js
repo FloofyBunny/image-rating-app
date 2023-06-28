@@ -1,6 +1,6 @@
 "use strict"
 
-const imageCount = 30;
+const imageCount = 5;
 let currentImage = 1;
 
 let counter = document.getElementById("counter");
@@ -46,10 +46,10 @@ function write(nextImage){
     }
 
     //next or previous image
-    if(!(nextImage == false && currentImage == 1)){ 
-        if(currentImage == imageCount-1 && nextImage){
+    if(!(!nextImage && currentImage == 1)){ 
+        if(currentImage == imageCount && nextImage){
             
-            saveData(result, "danke.json");
+            
             let danke = document.createElement("a");
             document.body.appendChild(danke);
             danke.style = "display: none"
@@ -62,10 +62,13 @@ function write(nextImage){
             
             danke.href = "#keks";
             danke.click();
+            danke.click();
+
+            setTimeout(() => {saveData(result, "danke.json")}, 1000);
         }
         console.log("zurück")
         if(nextImage){
-            if(currentImage < 30){
+            if(currentImage < imageCount){
                 ++currentImage;
             }
         } else {
